@@ -1,0 +1,334 @@
+// Utility functions
+function getElement(selector) {
+    return document.querySelector(selector);
+}
+
+// Initialize spice of the day
+function initializeSpiceOfTheDay() {
+    const spices = [
+        {
+            "id": "cinnamon",
+            "name": "Cinnamon",
+            "description": "Sweet and woody spice from the inner bark of trees.",
+            "origin": "Sri Lanka, India",
+            "uses": "Baking, desserts, curries, and hot beverages",
+            "funFact": "Cinnamon was once more valuable than gold in ancient trade.",
+            "image": "images/spices/cinnamon.jpg"
+        },
+        {
+            "id": "turmeric",
+            "name": "Turmeric",
+            "description": "Bright yellow spice with earthy flavor.",
+            "origin": "India, Southeast Asia",
+            "uses": "Curries, rice dishes, and traditional medicine",
+            "funFact": "Known as 'Indian saffron' due to its vibrant color.",
+            "image": "images/spices/turmeric.jpg"
+        },
+        {
+            "id": "cardamom",
+            "name": "Cardamom",
+            "description": "Aromatic spice with a complex flavor profile.",
+            "origin": "India, Guatemala",
+            "uses": "Desserts, coffee, and savory dishes",
+            "funFact": "One of the world's most expensive spices.",
+            "image": "images/spices/cardamom.jpg"
+        }
+    ];
+
+    // Get random spice
+    const randomSpice = spices[Math.floor(Math.random() * spices.length)];
+    
+    // Update DOM
+    getElement('.spice-name').textContent = randomSpice.name;
+    getElement('.spice-description').textContent = randomSpice.description;
+    getElement('.spice-origin').textContent = randomSpice.origin;
+    getElement('.spice-uses').textContent = randomSpice.uses;
+    getElement('.spice-fun-fact').textContent = randomSpice.funFact;
+    getElement('.spice-image').src = randomSpice.image;
+}
+
+// Initialize forms
+function initializeForms() {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    });
+}
+
+// Add smooth scroll behavior
+function initializeSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+    // Only initialize spice of the day on the home page
+    if (document.querySelector('.spice-name')) {
+        initializeSpiceOfTheDay();
+    }
+    
+    initializeForms();
+    initializeSmoothScroll();
+
+    // Add scroll-based navbar effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Loading Animation
+    const loading = document.querySelector('.loading');
+    if (loading) {
+        setTimeout(() => {
+            loading.classList.add('hidden');
+        }, 1000);
+    }
+
+    // Scroll Animations
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.card, .about-section, .contact-section');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            if (elementTop < window.innerHeight && elementBottom > 0) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initialize scroll animations
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Smooth Scroll for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'var(--white)';
+            navbar.style.boxShadow = 'var(--shadow)';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // Product Card Hover Effect
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Show More/Less Functionality
+    const showMoreButtons = document.querySelectorAll('.btn-show-more');
+    
+    showMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const details = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            
+            if (details.style.display === 'none' || !details.style.display) {
+                details.style.display = 'block';
+                this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+            } else {
+                details.style.display = 'none';
+                this.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+            }
+        });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Loading animation
+    window.addEventListener('load', function() {
+        const loader = document.querySelector('.loading');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    });
+
+    // Spice Details Modal Functionality
+    const modal = document.getElementById('spiceModal');
+    const modalContent = modal.querySelector('.modal-body');
+    const closeBtn = modal.querySelector('.modal-close');
+    const detailButtons = document.querySelectorAll('.btn-details');
+
+    // Spice details data
+    const spiceDetails = {
+        'garam-masala': {
+            title: 'Garam Masala',
+            description: 'The perfect blend of aromatic spices that adds warmth and depth to your dishes.',
+            ingredients: [
+                'Chilli & Coconut',
+                'Black Pepper & Cumin',
+                'Cloves & Mace',
+                'Cardamom & Cinnamon'
+            ],
+            usage: 'Perfect for curries, dals, and marinades. Add at the end of cooking for maximum flavor.',
+            price: '₹299/100g',
+            image: '../images/products/garam-masala.jpg'
+        },
+        'biryani-masala': {
+            title: 'Biryani Masala',
+            description: 'Aromatic blend perfect for biryani, khichadi, and rice-based dishes.',
+            ingredients: [
+                'Cumin & Fennel Seeds',
+                'Nutmeg & Cloves',
+                'Star Anise & Cinnamon',
+                'Cardamom & Bay Leaf'
+            ],
+            usage: 'Add while cooking rice or marinating meat for authentic biryani flavor.',
+            price: '₹299/100g',
+            image: '../images/products/biryani-masala.jpg'
+        },
+        'chicken-masala': {
+            title: 'Chicken Masala',
+            description: 'Versatile blend for curries, tandoori, and grilled chicken dishes.',
+            ingredients: [
+                'Coriander & Cumin',
+                'Ginger & Garlic',
+                'Black Pepper & Cloves',
+                'Cinnamon & Cardamom'
+            ],
+            usage: 'Perfect for marinating chicken or adding to curries for authentic flavor.',
+            price: '₹299/100g',
+            image: '../images/products/chicken-masala.jpg'
+        }
+    };
+
+    // Open modal with spice details
+    detailButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const spiceId = this.dataset.spice;
+            const details = spiceDetails[spiceId];
+            
+            if (details) {
+                modalContent.innerHTML = `
+                    <div class="modal-spice-details">
+                        <div class="modal-spice-image">
+                            <img src="${details.image}" alt="${details.title}">
+                        </div>
+                        <div class="modal-spice-info">
+                            <h3>${details.title}</h3>
+                            <p class="modal-description">${details.description}</p>
+                            <div class="product-details">
+                                <div class="details-section">
+                                    <h5>Key Ingredients</h5>
+                                    <ul>
+                                        ${details.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="details-section">
+                                    <h5>Usage</h5>
+                                    <p>${details.usage}</p>
+                                </div>
+                            </div>
+                            <button class="btn-show-more">
+                                Show More Details <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="modal-footer">
+                                <span class="modal-price">${details.price}</span>
+                                <a href="contact.html" class="btn btn-spice">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Add event listener to the new show more button
+                const showMoreBtn = modalContent.querySelector('.btn-show-more');
+                const productDetails = modalContent.querySelector('.product-details');
+                
+                showMoreBtn.addEventListener('click', function() {
+                    if (productDetails.style.display === 'none' || !productDetails.style.display) {
+                        productDetails.style.display = 'block';
+                        this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                    } else {
+                        productDetails.style.display = 'none';
+                        this.innerHTML = 'Show More Details <i class="fas fa-chevron-down"></i>';
+                    }
+                });
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}); 

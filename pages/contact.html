@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Primary Meta Tags -->
+    <title>Contact Us | Indrayani Naturals</title>
+    <meta name="description" content="Contact Indrayani Naturals for premium spices, feedback, or inquiries. We're here to help you discover authentic Indian flavors.">
+    <meta name="keywords" content="contact, spices, Indrayani Naturals, feedback, inquiry, customer service">
+    <meta name="author" content="Indrayani Naturals">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading">
+        <div class="loading-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo.jpg" alt="Indrayani Naturals Logo">
+                <span>Indrayani Naturals</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recipes.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get in Touch</h1>
+                <p class="lead">We'd love to hear from you! Reach out for any inquiries about our premium spices.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <main class="container my-5">
+        <div class="row g-4">
+            <!-- Contact Form -->
+            <div class="col-lg-6">
+                <div class="card h-100 contact-card">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Send us a Message</h3>
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                                <div class="invalid-feedback">Please enter a subject.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">Please enter your message.</div>
+                            </div>
+                            <button type="submit" class="btn btn-spice">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-6">
+                <div class="card h-100 contact-card">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Contact Information</h3>
+                        <div class="contact-info">
+                            <div class="contact-item mb-4">
+                                <h5><i class="fas fa-map-marker-alt me-2"></i>Address</h5>
+                                <p>123 Spice Street, Nagpur<br>Maharashtra, India - 440001</p>
+                            </div>
+                            <div class="contact-item mb-4">
+                                <h5><i class="fas fa-phone me-2"></i>Phone</h5>
+                                <p><a href="tel:+911234567891">+91 1234567891</a></p>
+                            </div>
+                            <div class="contact-item mb-4">
+                                <h5><i class="fas fa-envelope me-2"></i>Email</h5>
+                                <p><a href="mailto:indrayaninaturals@gmail.com">indrayaninaturals@gmail.com</a></p>
+                            </div>
+                            <div class="contact-item mb-4">
+                                <h5><i class="fas fa-clock me-2"></i>Business Hours</h5>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                            </div>
+                            <div class="social-links mt-4">
+                                <h5><i class="fas fa-share-alt me-2"></i>Follow Us</h5>
+                                <div class="d-flex gap-3 mt-3">
+                                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Indrayani Naturals</h4>
+                    <p>We bring you the authentic soul of Indian cooking! Our Spices are handcrafted with the finest local ingredients.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope me-2"></i> indrayaninaturals@gmail.com</p>
+                    <p><i class="fas fa-phone me-2"></i> +91 1234567891</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center">
+                <p>&copy; 2024 Indrayani Naturals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Home Button -->
+    <a href="../index.html" class="home-button">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Form validation
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+</body>
+</html>
