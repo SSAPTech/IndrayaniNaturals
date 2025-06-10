@@ -6,25 +6,25 @@
 
 :root {
     /* Professional Color Scheme */
-    --primary-color: #ffffff;
-    --secondary-color: #f8f9fa;
-    --accent-color: #e9ecef;
-    --text-color: #212529;
-    --light-text: #6c757d;
-    --dark-color: #343a40;
-    --white: #ffffff;
+    --primary-color: #FF8C00;      /* Dark Orange */
+    --secondary-color: #2E7D32;    /* Forest Green */
+    --accent-color: #FFA726;       /* Light Orange */
+    --text-color: #333333;         /* Dark Gray */
+    --light-text: #666666;         /* Medium Gray */
+    --dark-color: #1B5E20;         /* Dark Green */
+    --white: #FFFFFF;
     --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --light-bg: #f8f9fa;
-    --card-bg: #ffffff;
-    --border-color: #dee2e6;
-    --spice-brown: #5D4037;
+    --light-bg: #F1F8E9;           /* Very Light Green */
+    --card-bg: #FFFFFF;
+    --border-color: #E8F5E9;       /* Very Light Green */
+    --spice-brown: #5D4037;        /* Dark Brown */
     --transition-speed: 0.3s;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --error-color: #D32F2F;
-    --warning-color: #FFA000;
-    --background-light: #F1F8E9;
-    --background-dark: #1B5E20;
+    --error-color: #D32F2F;        /* Red */
+    --warning-color: #FFA000;      /* Amber */
+    --background-light: #F1F8E9;   /* Light Green */
+    --background-dark: #1B5E20;    /* Dark Green */
 }
 
 /* Dark Mode Colors */
@@ -83,9 +83,14 @@ body {
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(to right, var(--background-dark), var(--primary-color));
+    background-color: var(--secondary-color);
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
 }
 
 .navbar-brand {
@@ -175,7 +180,7 @@ body {
 }
 
 .hero::before {
-    display: none; /* Remove the overlay */
+    background: linear-gradient(to right, rgba(46, 125, 50, 0.8), rgba(255, 140, 0, 0.8));
 }
 
 .hero-content {
@@ -251,7 +256,7 @@ body {
 
 /* Cards */
 .card {
-    border: none;
+    border-color: var(--border-color);
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -262,6 +267,7 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
 }
 
 .card-img-top {
@@ -417,7 +423,7 @@ body {
 
 /* Footer */
 footer {
-    background: linear-gradient(to right, var(--background-dark), var(--primary-color));
+    background-color: var(--secondary-color);
     color: var(--white);
     padding: 3rem 0;
     margin-top: 4rem;
@@ -436,18 +442,18 @@ footer p {
 }
 
 footer a {
-    color: var(--light-color);
+    color: var(--white);
     text-decoration: none;
     transition: var(--transition);
     font-size: 1.1rem;
 }
 
 footer a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .social-links a {
-    color: var(--white);
+    color: var(--primary-color);
     font-size: 1.4rem;
     margin-right: 1rem;
     transition: all 0.3s ease;
@@ -619,7 +625,7 @@ footer a:hover {
 
 /* Footer Enhancements */
 .footer {
-    background: var(--dark-color);
+    background-color: var(--secondary-color);
     color: var(--white);
     padding: 4rem 0 2rem;
 }
@@ -868,7 +874,7 @@ h2:after {
 }
 
 .navbar.scrolled {
-    background-color: var(--white);
+    background-color: var(--secondary-color);
     box-shadow: var(--shadow);
 }
 
@@ -1657,4 +1663,105 @@ section h2::after {
     .modal-ingredients ul {
         grid-template-columns: 1fr;
     }
+}
+
+/* Update button styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Update navbar styles */
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar.scrolled {
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+/* Update card styles */
+.card {
+    border-color: var(--border-color);
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+}
+
+/* Update loading animation */
+.loading-bar {
+    border-color: var(--light-bg);
+    border-top-color: var(--primary-color);
+}
+
+/* Update section backgrounds */
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+/* Update text colors */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Update feature icons */
+.feature-icon {
+    color: var(--primary-color);
+}
+
+/* Update footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+footer a {
+    color: var(--white);
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Update hero section */
+.hero::before {
+    background: linear-gradient(to right, rgba(46, 125, 50, 0.8), rgba(255, 140, 0, 0.8));
+}
+
+/* Update process steps */
+.process-step .step-number {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Update team section */
+.team-member img {
+    border: 3px solid var(--primary-color);
+}
+
+/* Update social icons */
+.social-icons a {
+    color: var(--primary-color);
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
 }
