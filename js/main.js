@@ -169,10 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'var(--white)';
             navbar.style.boxShadow = 'var(--shadow)';
         } else {
-            navbar.style.backgroundColor = 'transparent';
             navbar.style.boxShadow = 'none';
         }
     });
