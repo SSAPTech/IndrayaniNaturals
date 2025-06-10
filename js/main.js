@@ -78,6 +78,38 @@ function initializeSmoothScroll() {
     });
 }
 
+// Initialize animations
+function initializeAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Loading Animation
+function initializeLoading() {
+    const loading = document.querySelector('.loading');
+    if (loading) {
+        setTimeout(() => {
+            loading.classList.add('hidden');
+            setTimeout(() => {
+                loading.style.display = 'none';
+            }, 500);
+        }, 2000); // 2 seconds loading time
+    }
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     // Only initialize spice of the day on the home page
@@ -87,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initializeForms();
     initializeSmoothScroll();
+    initializeAnimations();
+    initializeLoading();
 
     // Add scroll-based navbar effect
     window.addEventListener('scroll', () => {
@@ -97,14 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
     });
-
-    // Loading Animation
-    const loading = document.querySelector('.loading');
-    if (loading) {
-        setTimeout(() => {
-            loading.classList.add('hidden');
-        }, 1000);
-    }
 
     // Scroll Animations
     const animateOnScroll = () => {
@@ -192,17 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // Loading animation
-    window.addEventListener('load', function() {
-        const loader = document.querySelector('.loading');
-        if (loader) {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }
     });
 
     // Spice Details Modal Functionality

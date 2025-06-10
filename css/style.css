@@ -6,27 +6,25 @@
 
 :root {
     /* Professional Color Scheme */
-    --primary-color: #2E7D32;      /* Forest Green */
-    --secondary-color: #4CAF50;    /* Green */
-    --accent-color: #8BC34A;       /* Light Green */
-    --dark-color: #1B5E20;         /* Dark Green */
-    --light-color: #F1F8E9;        /* Very light green background */
-    --success-color: #388E3C;      /* Green */
-    --text-color: #333333;         /* Dark Gray */
-    --text-light: #666666;         /* Medium Gray */
-    --white: #FFFFFF;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --primary-color: #ffffff;
+    --secondary-color: #f8f9fa;
+    --accent-color: #e9ecef;
+    --text-color: #212529;
+    --light-text: #6c757d;
+    --dark-color: #343a40;
+    --white: #ffffff;
+    --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --light-bg: #FFFFFF;           /* White */
-    --card-bg: #ffffff;            /* White */
-    --border-color: #E8F5E9;       /* Very Light Green */
-    --spice-brown: #5D4037;        /* Dark Brown */
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --spice-brown: #5D4037;
     --transition-speed: 0.3s;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --error-color: #D32F2F;        /* Red */
-    --warning-color: #FFA000;      /* Amber */
-    --background-light: #F1F8E9;   /* Light Green */
-    --background-dark: #1B5E20;    /* Dark Green */
+    --error-color: #D32F2F;
+    --warning-color: #FFA000;
+    --background-light: #F1F8E9;
+    --background-dark: #1B5E20;
 }
 
 /* Dark Mode Colors */
@@ -769,45 +767,118 @@ h2:after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--white);
+    background: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: transform 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .loading.hidden {
-    transform: translateY(-100%);
+    opacity: 0;
     pointer-events: none;
 }
 
 .loading-bar {
-    width: 200px;
-    height: 4px;
-    background-color: var(--light-color);
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--light-bg);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Animations */
+.btn {
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.loading-bar::after {
+.btn::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    background-color: var(--primary-color);
-    animation: slide 1s ease-in-out infinite;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(250%);
-    }
+.btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Navigation Animation */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+/* Image Hover Effects */
+.img-hover {
+    transition: transform 0.3s ease;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
 }
 
 /* Section Headers */
