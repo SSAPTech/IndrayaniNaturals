@@ -138,4 +138,10 @@
 
 .recipes-grid .col-md-4 {
     animation: fadeIn 0.5s ease-in-out;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero/recipes-hero.jpg');
+    background-size: cover;
+    background-position: center;
 } 

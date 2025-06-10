@@ -43,13 +43,13 @@
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="products.html">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="recipes.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -75,78 +75,72 @@
         <section class="featured-spices">
             <div class="container">
                 <h2 class="section-title">Our Signature Blends</h2>
-                <div class="spice-showcase">
+                <div class="row g-4">
                     <!-- Garam Masala -->
-                    <div class="spice-item">
-                        <div class="spice-image">
-                            <img src="../images/products/garam-masala.jpg" alt="Garam Masala">
-                            <div class="spice-overlay">
-                                <div class="spice-info">
-                                    <h3>Garam Masala</h3>
-                                    <div class="spice-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <span>4.5</span>
-                                    </div>
-                                    <p>The perfect blend of aromatic spices that adds warmth and depth to your dishes.</p>
-                                    <div class="spice-actions">
-                                        <span class="price">₹299/100g</span>
-                                        <button class="btn-details" data-spice="garam-masala">View Details</button>
-                                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="../images/products/garam-masala.jpg" class="card-img-top" alt="Garam Masala">
+                            <div class="card-body">
+                                <h5 class="card-title">Garam Masala</h5>
+                                <p class="card-text">The perfect blend of aromatic spices that adds warmth and depth to your dishes.</p>
+                                <div class="product-details">
+                                    <h5>Key Ingredients:</h5>
+                                    <ul>
+                                        <li>Chilli & Coconut</li>
+                                        <li>Black Pepper & Cumin</li>
+                                        <li>Cloves & Mace</li>
+                                        <li>Cardamom & Cinnamon</li>
+                                    </ul>
                                 </div>
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#garamMasalaModal">
+                                    View More Information
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Biryani Masala -->
-                    <div class="spice-item">
-                        <div class="spice-image">
-                            <img src="../images/products/biryani-masala.jpg" alt="Biryani Masala">
-                            <div class="spice-overlay">
-                                <div class="spice-info">
-                                    <h3>Biryani Masala</h3>
-                                    <div class="spice-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>5.0</span>
-                                    </div>
-                                    <p>Aromatic blend perfect for biryani, khichadi, and rice-based dishes.</p>
-                                    <div class="spice-actions">
-                                        <span class="price">₹299/100g</span>
-                                        <button class="btn-details" data-spice="biryani-masala">View Details</button>
-                                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="../images/products/biryani-masala.jpg" class="card-img-top" alt="Biryani Masala">
+                            <div class="card-body">
+                                <h5 class="card-title">Biryani Masala</h5>
+                                <p class="card-text">Aromatic blend perfect for biryani, khichadi, and rice-based dishes.</p>
+                                <div class="product-details">
+                                    <h5>Key Ingredients:</h5>
+                                    <ul>
+                                        <li>Cumin & Fennel Seeds</li>
+                                        <li>Nutmeg & Cloves</li>
+                                        <li>Star Anise & Cinnamon</li>
+                                        <li>Cardamom & Bay Leaf</li>
+                                    </ul>
                                 </div>
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#biryaniMasalaModal">
+                                    View More Information
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Chicken Masala -->
-                    <div class="spice-item">
-                        <div class="spice-image">
-                            <img src="../images/products/chicken-masala.jpg" alt="Chicken Masala">
-                            <div class="spice-overlay">
-                                <div class="spice-info">
-                                    <h3>Chicken Masala</h3>
-                                    <div class="spice-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <span>4.0</span>
-                                    </div>
-                                    <p>Versatile blend for curries, tandoori, and grilled chicken dishes.</p>
-                                    <div class="spice-actions">
-                                        <span class="price">₹299/100g</span>
-                                        <button class="btn-details" data-spice="chicken-masala">View Details</button>
-                                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <img src="../images/products/chicken-masala.jpg" class="card-img-top" alt="Chicken Masala">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Masala</h5>
+                                <p class="card-text">Versatile blend for curries, tandoori, and grilled chicken dishes.</p>
+                                <div class="product-details">
+                                    <h5>Key Ingredients:</h5>
+                                    <ul>
+                                        <li>Cumin & Fennel Seeds</li>
+                                        <li>Cloves & Star Anise</li>
+                                        <li>Cinnamon & Cardamom</li>
+                                        <li>Bay Leaf & Coriander</li>
+                                    </ul>
                                 </div>
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#chickenMasalaModal">
+                                    View More Information
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -253,6 +247,162 @@
             <button class="modal-close">&times;</button>
             <div class="modal-body">
                 <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Spice Information Modals -->
+    <!-- Garam Masala Modal -->
+    <div class="modal fade" id="garamMasalaModal" tabindex="-1" aria-labelledby="garamMasalaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="garamMasalaModalLabel">Garam Masala - Detailed Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="../images/products/garam-masala.jpg" class="img-fluid rounded" alt="Garam Masala">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>About This Blend</h4>
+                            <p>Our Garam Masala is a traditional blend of warming spices that adds depth and complexity to your dishes. Each spice is carefully selected and roasted to perfection before being ground together.</p>
+                            
+                            <h4>Complete Ingredients</h4>
+                            <ul>
+                                <li>Black Peppercorns</li>
+                                <li>Green Cardamom Pods</li>
+                                <li>Cinnamon Sticks</li>
+                                <li>Cloves</li>
+                                <li>Cumin Seeds</li>
+                                <li>Mace</li>
+                                <li>Bay Leaves</li>
+                                <li>Nutmeg</li>
+                            </ul>
+
+                            <h4>Fun Facts</h4>
+                            <ul>
+                                <li>The name "Garam Masala" means "hot spice mix" in Hindi</li>
+                                <li>Each family in India has their own unique recipe</li>
+                                <li>Traditionally made fresh for each use</li>
+                                <li>Contains warming spices that help digestion</li>
+                            </ul>
+
+                            <h4>Best Used In</h4>
+                            <ul>
+                                <li>Curries and gravies</li>
+                                <li>Rice dishes</li>
+                                <li>Marinades</li>
+                                <li>Soups and stews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biryani Masala Modal -->
+    <div class="modal fade" id="biryaniMasalaModal" tabindex="-1" aria-labelledby="biryaniMasalaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="biryaniMasalaModalLabel">Biryani Masala - Detailed Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="../images/products/biryani-masala.jpg" class="img-fluid rounded" alt="Biryani Masala">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>About This Blend</h4>
+                            <p>Our Biryani Masala is specially crafted to create the perfect aromatic biryani. The blend of spices creates layers of flavor that make your biryani truly special.</p>
+                            
+                            <h4>Complete Ingredients</h4>
+                            <ul>
+                                <li>Cumin Seeds</li>
+                                <li>Fennel Seeds</li>
+                                <li>Star Anise</li>
+                                <li>Black Cardamom</li>
+                                <li>Green Cardamom</li>
+                                <li>Cloves</li>
+                                <li>Cinnamon</li>
+                                <li>Bay Leaves</li>
+                                <li>Mace</li>
+                            </ul>
+
+                            <h4>Fun Facts</h4>
+                            <ul>
+                                <li>Biryani originated in the royal kitchens of the Mughal Empire</li>
+                                <li>Each region in India has its own unique biryani style</li>
+                                <li>The word "biryani" comes from the Persian word "birian"</li>
+                                <li>Traditionally cooked in sealed pots to trap the aromas</li>
+                            </ul>
+
+                            <h4>Best Used In</h4>
+                            <ul>
+                                <li>Chicken Biryani</li>
+                                <li>Vegetable Biryani</li>
+                                <li>Pulao</li>
+                                <li>Rice-based dishes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chicken Masala Modal -->
+    <div class="modal fade" id="chickenMasalaModal" tabindex="-1" aria-labelledby="chickenMasalaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chickenMasalaModalLabel">Chicken Masala - Detailed Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="../images/products/chicken-masala.jpg" class="img-fluid rounded" alt="Chicken Masala">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>About This Blend</h4>
+                            <p>Our Chicken Masala is a versatile blend that brings out the best in chicken dishes. Whether you're making curry, tandoori, or grilled chicken, this masala adds the perfect touch of flavor.</p>
+                            
+                            <h4>Complete Ingredients</h4>
+                            <ul>
+                                <li>Cumin Seeds</li>
+                                <li>Fennel Seeds</li>
+                                <li>Black Peppercorns</li>
+                                <li>Cloves</li>
+                                <li>Star Anise</li>
+                                <li>Cinnamon</li>
+                                <li>Cardamom</li>
+                                <li>Bay Leaves</li>
+                                <li>Coriander Seeds</li>
+                            </ul>
+
+                            <h4>Fun Facts</h4>
+                            <ul>
+                                <li>Chicken masala varies by region in India</li>
+                                <li>Some recipes include over 20 different spices</li>
+                                <li>Traditionally roasted before grinding</li>
+                                <li>Each spice is added at different stages of cooking</li>
+                            </ul>
+
+                            <h4>Best Used In</h4>
+                            <ul>
+                                <li>Chicken Curry</li>
+                                <li>Tandoori Chicken</li>
+                                <li>Grilled Chicken</li>
+                                <li>Chicken Tikka</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

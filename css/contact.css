@@ -129,4 +129,11 @@
 .contact-section .col-md-6,
 .contact-info-section .col-md-4 {
     animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Contact Page Specific Styles */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero/contact-hero.jpg');
+    background-size: cover;
+    background-position: center;
 } 

@@ -172,9 +172,9 @@ body {
     min-height: auto;
     display: flex;
     align-items: center;
-    background: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
 }
@@ -212,6 +212,31 @@ body {
 
 .hero-content p {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Home Page Hero */
+body:has(.navbar-brand[href="index.html"]) .hero {
+    background-image: url('../images/hero/home-hero.jpg');
+}
+
+/* About Page Hero */
+body:has(.navbar-brand[href="../index.html"]) .hero:has(h1:contains("Our Story")) {
+    background-image: url('../images/hero/about-hero.jpg');
+}
+
+/* Products Page Hero */
+body:has(.navbar-brand[href="../index.html"]) .hero:has(h1:contains("Premium Spice Collection")) {
+    background-image: url('../images/hero/products-hero.jpg');
+}
+
+/* Recipes Page Hero */
+body:has(.navbar-brand[href="../index.html"]) .hero:has(h1:contains("Authentic Maharashtrian Recipes")) {
+    background-image: url('../images/hero/recipes-hero.jpg');
+}
+
+/* Contact Page Hero */
+body:has(.navbar-brand[href="../index.html"]) .hero:has(h1:contains("Get in Touch")) {
+    background-image: url('../images/hero/contact-hero.jpg');
 }
 
 /* Hero Section - Other Pages */
