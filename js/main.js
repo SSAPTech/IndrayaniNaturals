@@ -110,8 +110,44 @@ function initializeLoading() {
     }
 }
 
+// Card Animation on Scroll
+function handleCardAnimations() {
+    const recipeCards = document.querySelectorAll('.recipe-card');
+    const productCards = document.querySelectorAll('.product-card');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Wait for page to be fully loaded before starting animations
+    window.addEventListener('load', () => {
+        // Observe recipe cards
+        recipeCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Observe product cards
+        productCards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
+    initializeAnimations();
+    initializeLoading();
+    
     // Only initialize spice of the day on the home page
     if (document.querySelector('.spice-name')) {
         initializeSpiceOfTheDay();
@@ -119,8 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     initializeForms();
     initializeSmoothScroll();
-    initializeAnimations();
-    initializeLoading();
+    handleCardAnimations();
 
     // Add scroll-based navbar effect
     window.addEventListener('scroll', () => {

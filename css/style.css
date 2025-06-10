@@ -17,6 +17,7 @@
     --transition: all 0.3s ease;
     --light-bg: #F1F8E9;           /* Very Light Green */
     --card-bg: #FFFFFF;
+    --card2-bg: #eeb053;           /* Light Orange for cards */
     --border-color: #E8F5E9;       /* Very Light Green */
     --spice-brown: #5D4037;        /* Dark Brown */
     --transition-speed: 0.3s;
@@ -2001,3 +2002,27 @@ footer a:hover {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
 }
+
+/* Card Animations */
+@keyframes simpleFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Common Card Animation */
+.card {
+    opacity: 0;
+    animation: simpleFadeIn 0.5s ease forwards;
+}
+
+/* Card Delays */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
