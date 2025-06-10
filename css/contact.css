@@ -1,0 +1,132 @@
+/* Contact Page Specific Styles */
+.contact-hero {
+    min-height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/contact-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Form Section */
+.contact-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+}
+
+.contact-card {
+    background-color: var(--card2-bg);
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card .card-title {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card .form-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.contact-card .form-control {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.contact-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}
+
+.contact-card .btn-primary {
+    width: 100%;
+    padding: 0.8rem;
+    font-weight: 500;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.contact-info-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: var(--card2-bg);
+    transition: var(--transition);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info-card h3 {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-card p {
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Map Section */
+.map-section {
+    padding: 3rem 0;
+    background-color: var(--light-bg);
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-section .col-md-6,
+.contact-info-section .col-md-4 {
+    animation: fadeIn 0.5s ease-in-out;
+} 

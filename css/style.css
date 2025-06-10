@@ -186,29 +186,32 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    color: var(--light-bg);
+    color: var(--white);
     text-align: center;
     animation: fadeInUp 2s ease;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content .lead {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Hero Section - Other Pages */
@@ -256,41 +259,40 @@ body {
 
 /* Cards */
 .card {
-    border-color: var(--border-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: var(--card2-bg);
+    border: none;
+    border-radius: 15px;
     overflow: hidden;
+    transition: var(--transition);
+    background-color: var(--card2-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .card-body {
     padding: 1.5rem;
+    background-color: var(--card2-bg);
 }
 
 .card-title {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: 600;
     margin-bottom: 1rem;
-    font-size: 1.25rem;
 }
 
 .card-text {
     color: var(--text-color);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    opacity: 0.9;
     margin-bottom: 1rem;
 }
 
@@ -425,43 +427,162 @@ body {
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
-    padding: 3rem 0;
+    padding: 4rem 0 2rem;
     margin-top: 4rem;
 }
 
-footer h5 {
+footer h4 {
     color: var(--white);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
 footer p {
     color: var(--white);
     font-size: 1.1rem;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
-footer a {
+footer .list-unstyled li {
+    margin-bottom: 0.8rem;
+}
+
+footer .list-unstyled a {
     color: var(--white);
     text-decoration: none;
     transition: var(--transition);
-    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 2px;
 }
 
-footer a:hover {
+footer .list-unstyled a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
     color: var(--primary-color);
 }
 
-.social-links a {
-    color: var(--primary-color);
-    font-size: 1.4rem;
+footer .list-unstyled a:hover::after {
+    width: 100%;
+}
+
+footer .social-icons a {
+    color: var(--white);
+    font-size: 1.2rem;
     margin-right: 1rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-2px);
+footer .social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Contact Information in Footer */
+footer .contact-info {
+    color: var(--white);
+}
+
+footer .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+footer .contact-info i {
+    color: var(--primary-color);
+}
+
+/* Important Footer Links */
+footer .important-link {
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 4px;
+}
+
+footer .important-link:hover {
+    color: var(--primary-color);
+    text-decoration-color: var(--white);
+}
+
+/* Section Headings */
+section h2 {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Card Content */
+.card-body {
+    color: var(--text-color);
+}
+
+.card-body h3 {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.card-body p {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Form Labels */
+.form-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Navigation Links */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* Health Benefits Section */
@@ -910,14 +1031,12 @@ section h2::after {
 
 /* Product Cards - Signature Blends */
 .product-card {
-    background: var(--card2-bg);
+    background-color: var(--card2-bg);
+    border: none;
     border-radius: 15px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
@@ -1699,11 +1818,41 @@ section h2::after {
 
 /* Update card styles */
 .card {
-    border-color: var(--border-color);
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    background-color: var(--card2-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 .card:hover {
-    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: var(--card2-bg);
+}
+
+.card-title {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: var(--text-color);
+    opacity: 0.9;
+    margin-bottom: 1rem;
 }
 
 /* Update loading animation */
@@ -1764,4 +1913,66 @@ footer a:hover {
 
 .social-icons a:hover {
     color: var(--accent-color);
+}
+
+/* Recipe Card Specific */
+.recipe-card {
+    background-color: var(--card2-bg);
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card .card-body {
+    background-color: var(--card2-bg);
+    padding: 1.5rem;
+}
+
+.recipe-card .card-title {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.recipe-card .card-text {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Contact Card Specific */
+.contact-card {
+    background-color: var(--card2-bg);
+    border: none;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card .card-title {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card .form-label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.contact-card .form-control {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.contact-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
 }
