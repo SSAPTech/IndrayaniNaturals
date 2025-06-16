@@ -39,13 +39,13 @@
 }
 
 .contact-card .card-title {
-    color: var(--text-color);
+    color: var(--secondary-color);
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
 .contact-card .form-label {
-    color: var(--text-color);
+    color: var(--secondary-color);
     font-weight: 500;
 }
 
@@ -53,7 +53,7 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0.8rem;
     border-radius: 8px;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.868);
 }
 
 .contact-card .form-control:focus {
@@ -136,4 +136,31 @@
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero/contact-hero.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.contact-info .contact-item h5 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info .contact-item p {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.contact-info .contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info .contact-item a:hover {
+    color: var(--primary-color);
+}
+
+.social-links h5 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 } 
