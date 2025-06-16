@@ -175,6 +175,32 @@ function updateThemeIcon(theme) {
     }
 }
 
+// Hero Image Rotation
+function initHeroImageRotation() {
+    const heroImages = document.querySelectorAll('.hero-image');
+    let currentIndex = 0;
+    const interval = 5000; // Change image every 5 seconds
+
+    function rotateImages() {
+        // Remove active class from current image
+        heroImages[currentIndex].classList.remove('active');
+        
+        // Move to next image
+        currentIndex = (currentIndex + 1) % heroImages.length;
+        
+        // Add active class to new image
+        heroImages[currentIndex].classList.add('active');
+    }
+
+    // Start rotation
+    setInterval(rotateImages, interval);
+}
+
+// Initialize hero image rotation when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroImageRotation();
+});
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     initializeAnimations();

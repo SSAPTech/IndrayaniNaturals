@@ -137,6 +137,7 @@ img {
     backface-visibility: hidden;
     transform: translateZ(0);
     -webkit-font-smoothing: subpixel-antialiased;
+    object-fit: contain;
 }
 
 .card-img-top {
@@ -145,10 +146,12 @@ img {
     object-fit: cover;
     object-position: center;
     transition: transform 0.3s ease;
+    will-change: transform;
+    transform-origin: center;
 }
 
 .card-img-top:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Navbar Dark Mode Adjustments */
@@ -234,6 +237,24 @@ img {
     font-weight: 500;
     padding: 0.5rem 1rem !important;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-link:hover {
@@ -242,17 +263,6 @@ img {
 
 .nav-link.active {
     color: var(--secondary-color) !important;
-    position: relative;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    right: 1rem;
-    height: 2px;
-    background-color: var(--secondary-color);
 }
 
 /* Home Button */
@@ -1084,12 +1094,12 @@ h2:after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--white);
+    background-color: var(--body-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 .loading.hidden {
@@ -1100,7 +1110,7 @@ h2:after {
 .loading-bar {
     width: 50px;
     height: 50px;
-    border: 3px solid var(--light-bg);
+    border: 3px solid var(--border-color);
     border-top-color: var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -1244,11 +1254,13 @@ section h2::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    object-position: center;
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .product-card:hover .product-image img {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .product-badge {
@@ -1379,11 +1391,13 @@ section h2::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .spice-card:hover .spice-image img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .spice-overlay {
@@ -1609,8 +1623,10 @@ section h2::after {
 
 .modal-spice-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    max-height: 400px;
 }
 
 .modal-spice-info {
@@ -1705,32 +1721,26 @@ section h2::after {
 }
 
 .modal-content {
-    background: var(--card2-bg);
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    border-radius: 15px;
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+    background-color: var(--card-bg);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
 }
 
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    cursor: pointer;
-    z-index: 1;
-    transition: color 0.3s ease;
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.modal-close:hover {
-    color: var(--primary-color);
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-title {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.modal-body {
+    color: var(--light-text);
 }
 
 /* Individual Spices Section */
@@ -1894,8 +1904,10 @@ section h2::after {
 
 .modal-spice-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    max-height: 400px;
 }
 
 .modal-spice-info {
