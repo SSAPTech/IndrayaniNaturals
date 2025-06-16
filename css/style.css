@@ -6,58 +6,79 @@
 
 :root {
     /* Light Mode Colors */
-    --primary-color: #8B0000;      /* Deep Burgundy */
-    --secondary-color: #D4AF37;    /* Metallic Gold */
-    --accent-color: #B8860B;       /* Dark Goldenrod */
-    --text-color: #2C1810;         /* Dark Brown */
-    --light-text: #5C4033;         /* Medium Brown */
-    --dark-color: #4A0404;         /* Dark Burgundy */
+    --primary-color: #8B0000; /* Darker Burgundy for better contrast */
+    --secondary-color: #CD853F; /* Peru - Better contrast than gold */
+    --accent-color: #8B4513; /* Saddle Brown - Better contrast */
+    --text-color: #2C1810; /* Darker Brown for better readability */
+    --light-text: #4A3528; /* Darker Brown for better contrast */
     --white: #FFFFFF;
-    --shadow: 0 2px 15px rgba(139, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --light-bg: #FFF8E7;           /* Warm Cream */
+    --black: #000000;
+    --gray-100: #F8F9FA;
+    --gray-200: #E9ECEF;
+    --gray-300: #DEE2E6;
+    --gray-400: #CED4DA;
+    --gray-500: #ADB5BD;
+    --gray-600: #6C757D;
+    --gray-700: #495057;
+    --gray-800: #343A40;
+    --gray-900: #212529;
+    --body-bg: #FFF8F0; /* Warmer background */
     --card-bg: #FFFFFF;
-    --card2-bg: #F5E6D3;           /* Warm Beige */
-    --border-color: #E8D5C4;       /* Light Beige */
-    --spice-brown: #5D4037;        /* Dark Brown */
+    --card2-bg: #FFF8F0;
+    --light-bg: #FFF8F0;
+    --border-color: #E0D3C3;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+    --dark-color: #4A3528;
+    --success-color: #28A745;
+    --warning-color: #FFC107;
+    --danger-color: #DC3545;
+    --info-color: #17A2B8;
+    --spice-brown: #4A0404;
     --transition-speed: 0.3s;
-    --box-shadow: 0 2px 4px rgba(139, 0, 0, 0.1);
-    --error-color: #D32F2F;        /* Red */
-    --warning-color: #B8860B;      /* Dark Goldenrod */
-    --background-light: #FFF8E7;   /* Warm Cream */
-    --background-dark: #4A0404;    /* Dark Burgundy */
-    --body-bg: var(--light-bg);
+    --error-color: #B22222;
+    --background-light: #FFF8E7;
+    --background-dark: #2C1810;
 }
 
 /* Dark Mode Colors */
 [data-theme="dark"] {
-    --text-color: #D4AF37;         /* Metallic Gold */
-    --light-text: #F5E6D3;         /* Warm Cream */
-    --body-bg: #1A0F0F;            /* Very Dark Burgundy */
-    --card-bg: #2C1810;            /* Dark Brown */
-    --border-color: #4A0404;       /* Dark Burgundy */
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --background-light: #2C1810;   /* Dark Brown */
-    --card2-bg: #3D2314;           /* Darker Brown */
-    --shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    --primary-color: #FF6B6B; /* Brighter Red for better visibility */
+    --secondary-color: #FFD700; /* Bright Gold */
+    --accent-color: #FFA500; /* Bright Orange */
+    --text-color: #FFE4B5; /* Moccasin - Better contrast */
+    --light-text: #FFDAB9; /* Peach Puff - Better contrast */
+    --body-bg: #1A1A1A;
+    --card-bg: #2D2D2D;
+    --card2-bg: #333333;
+    --light-bg: #2D2D2D;
+    --border-color: #404040;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --dark-color: #FFD700;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --danger-color: #F44336;
+    --info-color: #2196F3;
 }
 
 /* Dark Mode Text Adjustments */
 [data-theme="dark"] .card-title {
-    color: #D4AF37;                /* Metallic Gold */
+    color: #FFD700;
 }
 
 [data-theme="dark"] .card-text {
-    color: #F5E6D3;                /* Warm Cream */
+    color: #FFE4B5;
 }
 
 [data-theme="dark"] .nav-link {
-    color: #F5E6D3 !important;     /* Warm Cream */
+    color: #FFE4B5 !important;
 }
 
 [data-theme="dark"] .nav-link:hover,
 [data-theme="dark"] .nav-link.active {
-    color: #D4AF37 !important;     /* Metallic Gold */
+    color: #FFD700 !important;
 }
 
 [data-theme="dark"] h1,
@@ -66,40 +87,42 @@
 [data-theme="dark"] h4,
 [data-theme="dark"] h5,
 [data-theme="dark"] h6 {
-    color: #D4AF37;                /* Metallic Gold */
+    color: #FFD700;
 }
 
 [data-theme="dark"] p {
-    color: #F5E6D3;                /* Warm Cream */
+    color: #FFE4B5;
 }
 
 [data-theme="dark"] .hero-content {
-    color: #F5E6D3;                /* Warm Cream */
+    color: #FFE4B5;
 }
 
 [data-theme="dark"] .hero-content h1 {
-    color: #D4AF37;                /* Metallic Gold */
+    color: #FFD700;
 }
 
 [data-theme="dark"] .btn-outline {
-    border-color: #D4AF37;         /* Metallic Gold */
-    color: #D4AF37;                /* Metallic Gold */
+    border-color: #FFD700;
+    color: #FFD700;
 }
 
 [data-theme="dark"] .btn-outline:hover {
-    background-color: #D4AF37;     /* Metallic Gold */
-    color: #1A0F0F;                /* Very Dark Burgundy */
+    background-color: #FFD700;
+    color: #1A0F0F;
 }
 
 /* Base Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -107,6 +130,8 @@ body {
     color: var(--text-color);
     background-color: var(--body-bg);
     line-height: 1.6;
+    -webkit-transition: background-color var(--transition-speed), color var(--transition-speed);
+    -o-transition: background-color var(--transition-speed), color var(--transition-speed);
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
@@ -132,11 +157,13 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-font-smoothing: subpixel-antialiased;
     object-fit: contain;
 }
 
@@ -145,13 +172,19 @@ img {
     height: 250px;
     object-fit: cover;
     object-position: center;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
     will-change: transform;
-    transform-origin: center;
+    -webkit-transform-origin: center;
+            transform-origin: center;
 }
 
 .card-img-top:hover {
-    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
 }
 
 /* Navbar Dark Mode Adjustments */
@@ -170,13 +203,20 @@ img {
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
     transition: var(--transition);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: var(--shadow);
+            box-shadow: var(--shadow);
 }
 
 .card-body {

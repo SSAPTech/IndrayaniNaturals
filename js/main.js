@@ -1,71 +1,105 @@
 // Utility functions
 function getElement(selector) {
-    return document.querySelector(selector);
+    const element = document.querySelector(selector);
+    if (!element) {
+        console.warn(`Element not found: ${selector}`);
+        return null;
+    }
+    return element;
 }
 
 // Initialize spice of the day
 function initializeSpiceOfTheDay() {
-    const spices = [
-        {
-            "id": "cinnamon",
-            "name": "Cinnamon",
-            "description": "Sweet and woody spice from the inner bark of trees.",
-            "origin": "Sri Lanka, India",
-            "uses": "Baking, desserts, curries, and hot beverages",
-            "funFact": "Cinnamon was once more valuable than gold in ancient trade.",
-            "image": "images/spices/cinnamon.jpg"
-        },
-        {
-            "id": "turmeric",
-            "name": "Turmeric",
-            "description": "Bright yellow spice with earthy flavor.",
-            "origin": "India, Southeast Asia",
-            "uses": "Curries, rice dishes, and traditional medicine",
-            "funFact": "Known as 'Indian saffron' due to its vibrant color.",
-            "image": "images/spices/turmeric.jpg"
-        },
-        {
-            "id": "cardamom",
-            "name": "Cardamom",
-            "description": "Aromatic spice with a complex flavor profile.",
-            "origin": "India, Guatemala",
-            "uses": "Desserts, coffee, and savory dishes",
-            "funFact": "One of the world's most expensive spices.",
-            "image": "images/spices/cardamom.jpg"
-        }
-    ];
-
-    // Get random spice
-    const randomSpice = spices[Math.floor(Math.random() * spices.length)];
-    
-    // Update DOM
-    getElement('.spice-name').textContent = randomSpice.name;
-    getElement('.spice-description').textContent = randomSpice.description;
-    getElement('.spice-origin').textContent = randomSpice.origin;
-    getElement('.spice-uses').textContent = randomSpice.uses;
-    getElement('.spice-fun-fact').textContent = randomSpice.funFact;
-    getElement('.spice-image').src = randomSpice.image;
-}
-
-// Initialize forms
-function initializeForms() {
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            if (!form.checkValidity()) {
-                e.preventDefault();
-                e.stopPropagation();
+    try {
+        const spices = [
+            {
+                "id": "cinnamon",
+                "name": "Cinnamon",
+                "description": "Sweet and woody spice from the inner bark of trees.",
+                "origin": "Sri Lanka, India",
+                "uses": "Baking, desserts, curries, and hot beverages",
+                "funFact": "Cinnamon was once more valuable than gold in ancient trade.",
+                "image": "images/spices/cinnamon.jpg"
+            },
+            {
+                "id": "turmeric",
+                "name": "Turmeric",
+                "description": "Bright yellow spice with earthy flavor.",
+                "origin": "India, Southeast Asia",
+                "uses": "Curries, rice dishes, and traditional medicine",
+                "funFact": "Known as 'Indian saffron' due to its vibrant color.",
+                "image": "images/spices/turmeric.jpg"
+            },
+            {
+                "id": "cardamom",
+                "name": "Cardamom",
+                "description": "Aromatic spice with a complex flavor profile.",
+                "origin": "India, Guatemala",
+                "uses": "Desserts, coffee, and savory dishes",
+                "funFact": "One of the world's most expensive spices.",
+                "image": "images/spices/cardamom.jpg"
             }
-            form.classList.add('was-validated');
-        });
-    });
+        ];
+
+        // Get random spice
+        const randomSpice = spices[Math.floor(Math.random() * spices.length)];
+        
+        // Update DOM with error handling
+        const elements = {
+            name: getElement('.spice-name'),
+            description: getElement('.spice-description'),
+            origin: getElement('.spice-origin'),
+            uses: getElement('.spice-uses'),
+            funFact: getElement('.spice-fun-fact'),
+            image: getElement('.spice-image')
+        };
+
+        if (Object.values(elements).some(el => !el)) {
+            console.warn('Some spice elements not found');
+            return;
+        }
+
+        elements.name.textContent = randomSpice.name;
+        elements.description.textContent = randomSpice.description;
+        elements.origin.textContent = randomSpice.origin;
+        elements.uses.textContent = randomSpice.uses;
+        elements.funFact.textContent = randomSpice.funFact;
+        elements.image.src = randomSpice.image;
+    } catch (error) {
+        console.error('Error initializing spice of the day:', error);
+    }
 }
 
-// Add smooth scroll behavior
+// Initialize forms with error handling
+function initializeForms() {
+    try {
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach(form => {
+            const handleSubmit = (e) => {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            };
+
+            form.addEventListener('submit', handleSubmit);
+            
+            // Cleanup function
+            return () => {
+                form.removeEventListener('submit', handleSubmit);
+            };
+        });
+    } catch (error) {
+        console.error('Error initializing forms:', error);
+    }
+}
+
+// Add smooth scroll behavior with error handling
 function initializeSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    try {
+        const handleClick = function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -74,39 +108,74 @@ function initializeSmoothScroll() {
                     block: 'start'
                 });
             }
+        };
+
+        const anchors = document.querySelectorAll('a[href^="#"]');
+        anchors.forEach(anchor => {
+            anchor.addEventListener('click', handleClick);
         });
-    });
+
+        // Cleanup function
+        return () => {
+            anchors.forEach(anchor => {
+                anchor.removeEventListener('click', handleClick);
+            });
+        };
+    } catch (error) {
+        console.error('Error initializing smooth scroll:', error);
+    }
 }
 
-// Initialize animations
+// Initialize animations with error handling
 function initializeAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+    try {
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
         });
-    }, {
-        threshold: 0.1
-    });
 
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Cleanup function
+        return () => {
+            observer.disconnect();
+        };
+    } catch (error) {
+        console.error('Error initializing animations:', error);
+    }
 }
 
-// Loading Animation
+// Loading Animation with error handling
 function initializeLoading() {
-    const loading = document.querySelector('.loading');
-    if (loading) {
-        setTimeout(() => {
+    try {
+        const loading = document.querySelector('.loading');
+        if (!loading) return;
+
+        const hideLoading = () => {
             loading.classList.add('hidden');
             setTimeout(() => {
                 loading.style.display = 'none';
             }, 500);
-        }, 2000); // 2 seconds loading time
+        };
+
+        // Add loading timeout
+        const loadingTimeout = setTimeout(hideLoading, 2000);
+
+        // Cleanup function
+        return () => {
+            clearTimeout(loadingTimeout);
+        };
+    } catch (error) {
+        console.error('Error initializing loading:', error);
     }
 }
 
