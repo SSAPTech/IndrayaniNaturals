@@ -1,5 +1,6 @@
 /* About Page Specific Styles */
 .hero {
+    min-height: 60vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero/about-hero.jpg');
     background-size: cover;
     background-position: center;

@@ -1,11 +1,16 @@
 /* Home Page Specific Styles */
 .hero {
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
+    min-height: auto;
+    background: 
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('../images/home-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    background: var(--body-bg);
+    justify-content: center;
+    text-align: center;
 }
 
 .hero::before {
@@ -13,35 +18,24 @@
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    color: var(--text-color);
-    text-align: center;
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0,0,0,0.25);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    opacity: 1;
-    transform: none;
-    animation: fadeInUp 1s ease forwards;
+    margin-bottom: 1.2rem;
 }
 
 .hero-content .lead {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color);
-    opacity: 1;
-    transform: none;
-    animation: fadeInUp 1s ease forwards 0.3s;
 }
 
 .hero-content p {

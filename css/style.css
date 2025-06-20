@@ -337,7 +337,7 @@ img {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: auto;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -730,7 +730,7 @@ footer .list-unstyled a:hover::after {
 
 footer .social-icons a {
     color: var(--secondary-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-right: 1rem;
     transition: var(--transition);
 }
@@ -750,6 +750,7 @@ footer .contact-info p {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 footer .contact-info i {
@@ -1035,6 +1036,7 @@ section h2::after {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .footer .contact-info i {
@@ -1049,7 +1051,7 @@ section h2::after {
 
 .footer .social-links a {
     color: var(--secondary-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     transition: var(--transition);
 }
 
