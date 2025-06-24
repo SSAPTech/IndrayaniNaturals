@@ -1,4 +1,4 @@
-/* Hero Section Animations */
+s/* Hero Section Animations */
 .hero {
     position: relative;
     overflow: hidden;
@@ -93,39 +93,7 @@
 }
 
 /* Smooth Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Floating Animation */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 .hero-content h1,
 .hero-content .lead,
 .hero-content p {

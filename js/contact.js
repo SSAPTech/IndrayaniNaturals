@@ -1,22 +1,11 @@
 // Contact Page Specific JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize animations
-    initializeAnimations();
-    
     // Initialize contact form
     initializeContactForm();
     
     // Initialize map
     initializeMap();
 });
-
-function initializeAnimations() {
-    // Add animation classes to elements
-    const elements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
-    elements.forEach(element => {
-        element.classList.add('animate');
-    });
-}
 
 function initializeContactForm() {
     const form = document.querySelector('.contact-form');

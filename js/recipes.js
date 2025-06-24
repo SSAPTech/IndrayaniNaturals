@@ -1,22 +1,11 @@
 // Recipes Page Specific JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize animations
-    initializeAnimations();
-    
     // Initialize recipe filters
     initializeRecipeFilters();
     
     // Initialize recipe cards
     initializeRecipeCards();
 });
-
-function initializeAnimations() {
-    // Add animation classes to elements
-    const elements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
-    elements.forEach(element => {
-        element.classList.add('animate');
-    });
-}
 
 function initializeRecipeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');

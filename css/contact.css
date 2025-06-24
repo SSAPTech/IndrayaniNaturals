@@ -119,21 +119,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.contact-section .col-md-6,
-.contact-info-section .col-md-4 {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
 /* Contact Page Specific Styles */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero/contact-hero.jpg');
