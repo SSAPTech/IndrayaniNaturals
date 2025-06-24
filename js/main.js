@@ -248,7 +248,7 @@ function updateThemeIcon(theme) {
 function initHeroImageRotation() {
     const heroImages = document.querySelectorAll('.hero-image');
     let currentIndex = 0;
-    const interval = 5000; // Change image every 5 seconds
+    const interval = 10000; // Change image every 10 seconds
 
     function rotateImages() {
         // Remove active class from current image
