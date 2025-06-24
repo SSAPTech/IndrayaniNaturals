@@ -3,46 +3,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize recipe filters
     initializeRecipeFilters();
     
-    // Initialize recipe cards
-    initializeRecipeCards();
+    // Initialize recipe search
+    initializeRecipeSearch();
 });
 
+// Recipe filtering functionality
 function initializeRecipeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const recipeCards = document.querySelectorAll('.recipe-card');
+    const recipes = document.querySelectorAll('.recipe-card');
     
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
+            button.classList.add('active');
             
             // Filter recipes
-            recipeCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
+            recipes.forEach(recipe => {
+                const category = recipe.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    recipe.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    recipe.style.display = 'none';
                 }
             });
         });
     });
 }
 
-function initializeRecipeCards() {
-    // Add hover effects to recipe cards
-    const recipeCards = document.querySelectorAll('.recipe-card');
-    recipeCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
+// Recipe search functionality
+function initializeRecipeSearch() {
+    const searchInput = document.querySelector('#recipeSearch');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const recipes = document.querySelectorAll('.recipe-card');
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+        recipes.forEach(recipe => {
+            const title = recipe.querySelector('.recipe-title').textContent.toLowerCase();
+            const description = recipe.querySelector('.recipe-description').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                recipe.style.display = 'block';
+            } else {
+                recipe.style.display = 'none';
+            }
         });
     });
 }

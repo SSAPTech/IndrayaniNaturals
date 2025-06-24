@@ -270,11 +270,26 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroImageRotation();
 });
 
+// Centralized card initialization for both product and recipe cards
+function initializeCards() {
+    const cards = document.querySelectorAll('.product-card, .recipe-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
     initializeAnimations();
     initializeLoading();
     initializeThemeToggle();
+    initializeCards();
     
     // Only initialize spice of the day on the home page
     if (document.querySelector('.spice-name')) {
@@ -336,17 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.style.boxShadow = 'none';
         }
-    });
-
-    // Product Card Hover Effect
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
     });
 
     // Show More/Less Functionality

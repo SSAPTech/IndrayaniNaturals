@@ -3,46 +3,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize product filters
     initializeProductFilters();
     
-    // Initialize product cards
-    initializeProductCards();
+    // Initialize product search
+    initializeProductSearch();
 });
 
+// Product filtering functionality
 function initializeProductFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    const products = document.querySelectorAll('.product-card');
     
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
+            button.classList.add('active');
             
             // Filter products
-            productCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
+            products.forEach(product => {
+                const category = product.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    product.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    product.style.display = 'none';
                 }
             });
         });
     });
 }
 
-function initializeProductCards() {
-    // Add hover effects to product cards
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
+// Product search functionality
+function initializeProductSearch() {
+    const searchInput = document.querySelector('#productSearch');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const products = document.querySelectorAll('.product-card');
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+        products.forEach(product => {
+            const title = product.querySelector('.product-title').textContent.toLowerCase();
+            const description = product.querySelector('.product-description').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
         });
     });
 }

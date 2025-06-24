@@ -41,7 +41,7 @@
 .hero-content p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
+    color: #fff;
     opacity: 1;
     transform: none;
     animation: fadeInUp 1s ease forwards 0.6s;
@@ -158,6 +158,7 @@
     box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.25);
 }
 
+/* Why Choose Us Section */
 .why-choose-us .feature-box {
     text-align: center;
     padding: 2rem;
