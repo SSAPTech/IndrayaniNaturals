@@ -70,28 +70,4 @@ document.addEventListener('mouseout', function(e) {
     if (target.closest('.btn')) {
         target.closest('.btn').classList.remove('hover-scale');
     }
-});
-
-// Add loading animation
-function showLoading(element) {
-    element.classList.add('loading-pulse');
-}
-
-function hideLoading(element) {
-    element.classList.remove('loading-pulse');
-}
-
-// Add shake animation to form validation
-function shakeElement(element) {
-    element.classList.add('animate-shake');
-    setTimeout(() => {
-        element.classList.remove('animate-shake');
-    }, 500);
-}
-
-// Export functions for use in other files
-window.animations = {
-    showLoading,
-    hideLoading,
-    shakeElement
-}; 
+}); 
