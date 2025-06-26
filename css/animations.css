@@ -1,4 +1,6 @@
-/* Animation Keyframes */
+/* =====================
+   Animation Keyframes
+   ===================== */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -86,7 +88,43 @@
     to { transform: rotate(360deg); }
 }
 
-/* Animation Classes */
+/* =====================
+   Animation Classes
+   ===================== */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
 }
@@ -99,7 +137,6 @@
     animation: scaleIn 0.5s ease-out forwards;
 }
 
-/* Animation Utilities */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
@@ -111,7 +148,9 @@
     transform: translateY(0);
 }
 
-/* Hover Animations */
+/* =====================
+   Hover Animations
+   ===================== */
 .hover-lift {
     transition: transform 0.3s ease;
 }
@@ -128,32 +167,42 @@
     transform: scale(1.05);
 }
 
-/* Loading Animation */
+/* =====================
+   Loading Animation
+   ===================== */
 .loading-pulse {
     animation: loadingPulse 1.5s ease-in-out infinite;
 }
 
-/* Card Animation */
-.card {
-    animation: cardHover 0.3s ease-out forwards;
-    animation-play-state: paused;
-}
-
-.card:hover {
-    animation-play-state: running;
-}
-
-/* Modal Animation */
-.modal-content {
-    animation: modalFadeIn 0.3s ease-out forwards;
-}
-
-/* Loading Animation */
 .loading-bar {
     animation: spin 1s linear infinite;
 }
 
-/* Card Delays */
+/* =====================
+   Card Animation
+   ===================== */
+.card {
+    animation: cardHover 0.3s ease-out forwards;
+    animation-play-state: paused;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    animation-play-state: running;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================
+   Modal Animation
+   ===================== */
+.modal-content {
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+/* =====================
+   Card Delays
+   ===================== */
 .card:nth-child(1) { animation-delay: 0.1s; }
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
@@ -161,7 +210,9 @@
 .card:nth-child(5) { animation-delay: 0.5s; }
 .card:nth-child(6) { animation-delay: 0.6s; }
 
-/* Navigation Animation */
+/* =====================
+   Navigation Animation
+   ===================== */
 .nav-link::after {
     animation: navUnderline 0.3s ease-out forwards;
     animation-play-state: paused;
@@ -170,4 +221,15 @@
 .nav-link:hover::after,
 .nav-link.active::after {
     animation-play-state: running;
+}
+
+/* =====================
+   Image Hover Effects
+   ===================== */
+.img-hover {
+    transition: transform 0.3s ease;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
 } 

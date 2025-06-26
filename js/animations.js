@@ -1,4 +1,6 @@
+// =====================
 // Animation on Scroll
+// =====================
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     initAnimations();
@@ -10,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     handleScrollAnimations();
 });
 
+// =====================
+// Initialize Animations
+// =====================
 function initAnimations() {
     // Add animation classes to elements
     const animatedElements = document.querySelectorAll('[data-animate]');
@@ -25,6 +30,9 @@ function initAnimations() {
     });
 }
 
+// =====================
+// Handle Scroll Animations
+// =====================
 function handleScrollAnimations() {
     const elements = document.querySelectorAll('.animate-on-scroll');
     
@@ -43,7 +51,9 @@ function isElementInViewport(el) {
     );
 }
 
-// Add hover animations
+// =====================
+// Hover Animations
+// =====================
 document.addEventListener('mouseover', function(e) {
     const target = e.target;
     

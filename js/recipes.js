@@ -1,4 +1,6 @@
-// Recipes Page Specific JavaScript
+// =====================
+// Recipes Page JavaScript
+// =====================
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize recipe filters
     initializeRecipeFilters();
@@ -7,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeRecipeSearch();
 });
 
-// Recipe filtering functionality
+// =====================
+// Recipe Filtering
+// =====================
 function initializeRecipeFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const recipes = document.querySelectorAll('.recipe-card');
@@ -33,7 +37,9 @@ function initializeRecipeFilters() {
     });
 }
 
-// Recipe search functionality
+// =====================
+// Recipe Search
+// =====================
 function initializeRecipeSearch() {
     const searchInput = document.querySelector('#recipeSearch');
     if (!searchInput) return;
@@ -55,7 +61,9 @@ function initializeRecipeSearch() {
     });
 }
 
-// Smooth scroll for anchor links
+// =====================
+// Smooth Scroll for Anchor Links
+// =====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
