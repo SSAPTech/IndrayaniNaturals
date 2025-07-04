@@ -7,53 +7,69 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =====================
-// Contact Form Handling
+// Contact Form Handling (AJAX)
 // =====================
 function initializeContactForm() {
-    const form = document.querySelector('.contact-form');
+    const form = document.getElementById('contactForm');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            if (validateForm(data)) {
-                showMessage('Message sent successfully!', 'success');
-                form.reset();
+            // Use browser validation
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
             }
+            // Set dynamic subject
+            const name = form.querySelector('[name="name"]').value;
+            const email = form.querySelector('[name="email"]').value;
+            const subjectField = form.querySelector('[name="_subject"]');
+            if (subjectField) {
+                subjectField.value = `New Contact from ${name} (${email})`;
+            }
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showMessage('Your message was sent successfully!', 'success');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else {
+                    showMessage('There was an error sending your message. Please try again.', 'error');
+                }
+            })
+            .catch(() => {
+                showMessage('There was an error sending your message. Please try again.', 'error');
+            });
+        });
+        // Remove validation warnings on input
+        Array.from(form.elements).forEach(el => {
+            el.addEventListener('input', () => {
+                if (form.classList.contains('was-validated')) {
+                    form.classList.remove('was-validated');
+                }
+            });
         });
     }
 }
 
-function validateForm(data) {
-    let isValid = true;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!data.name || data.name.trim().length < 2) {
-        showMessage('Please enter a valid name', 'error');
-        isValid = false;
-    }
-    if (!data.email || !emailRegex.test(data.email)) {
-        showMessage('Please enter a valid email address', 'error');
-        isValid = false;
-    }
-    if (!data.message || data.message.trim().length < 10) {
-        showMessage('Please enter a message (minimum 10 characters)', 'error');
-        isValid = false;
-    }
-    return isValid;
-}
-
 function showMessage(message, type) {
+    // Remove any existing alert
+    const oldAlert = document.querySelector('.contact-alert');
+    if (oldAlert) oldAlert.remove();
     const messageDiv = document.createElement('div');
-    messageDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+    messageDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible contact-alert fade show`;
     messageDiv.innerHTML = `
-        ${message}
+        <span>${message}</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     `;
-    const form = document.querySelector('.contact-form');
+    const form = document.getElementById('contactForm');
     form.parentNode.insertBefore(messageDiv, form);
-    setTimeout(() => {
-        messageDiv.remove();
-    }, 5000);
 }
 
 // =====================
