@@ -114,7 +114,7 @@ img {
    ===================== */
 .navbar {
     background-color: var(--primary-color);
-    padding: 1rem 0;
+    padding: 2rem 0;
     box-shadow: var(--shadow);
 }
 .navbar.scrolled {
@@ -169,10 +169,11 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-size: 2rem;
 }
 
 .navbar-brand img {
-    height: 40px;
+    height: 80px;
     width: auto;
     border-radius: 8px;
 }
@@ -189,6 +190,7 @@ img {
     padding: 0.5rem 1rem !important;
     transition: color 0.3s ease;
     position: relative;
+    font-size: 1.35rem;
 }
 
 .nav-link::after {
@@ -1927,7 +1929,7 @@ section h2::after {
 /* Update navbar styles */
 .navbar {
     background-color: var(--primary-color);
-    padding: 1rem 0;
+    padding: 2rem 0;
     box-shadow: var(--shadow);
 }
 
